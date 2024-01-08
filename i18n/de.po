@@ -1,0 +1,63 @@
+# nv_templates Dictionary (English-German)
+# Copyright (C) 2022 Peter Triesberger
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"POT-Creation-Date: 2024-01-08 21:15:47\n"
+"PO-Revision-Date: 2024-01-08 21:15:47\n"
+"Last-Translator: Peter Triesberger\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Cannot read file"
+msgstr "Kann Datei nicht lesen"
+
+msgid "Cannot save template"
+msgstr "Kann Vorlage nicht speichern"
+
+msgid "Cannot write file"
+msgstr "Kann Datei nicht schreiben"
+
+msgid "Chapter"
+msgstr "Kapitel"
+
+msgid "Create from template..."
+msgstr "Aus Vorlage erzeugen..."
+
+msgid "File not found"
+msgstr "Datei nicht gefunden"
+
+msgid "Load"
+msgstr "Laden"
+
+msgid "New Section"
+msgstr "Neuer Abschnitt"
+
+msgid "Open folder"
+msgstr "Ordner öffnen"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Stages"
+msgstr "Stadien"
+
+msgid "Story Template"
+msgstr "Erzählstruktur-Vorlage"
+
+msgid "Story Templates"
+msgstr "Erzählstruktur-Vorlagen"
+
+msgid "Template loading aborted"
+msgstr "Laden der Vorlage abgebrochen"
+
+msgid "Template saved."
+msgstr "Vorlage gespeichert"
+
+msgid "Templates plugin Online help"
+msgstr "Vorlagen-Plugin Online-Hilfe"
+

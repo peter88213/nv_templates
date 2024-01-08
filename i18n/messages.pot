@@ -1,0 +1,63 @@
+# nv_templates Dictionary
+# Copyright (C) 2023 Peter Triesberger
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"POT-Creation-Date: 2024-01-08 21:15:47\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: novxlib pgettext.py 0.3\n"
+
+
+msgid "Cannot read file"
+msgstr ""
+
+msgid "Cannot save template"
+msgstr ""
+
+msgid "Cannot write file"
+msgstr ""
+
+msgid "Chapter"
+msgstr ""
+
+msgid "Create from template..."
+msgstr ""
+
+msgid "File not found"
+msgstr ""
+
+msgid "Load"
+msgstr ""
+
+msgid "New Section"
+msgstr ""
+
+msgid "Open folder"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Stages"
+msgstr ""
+
+msgid "Story Template"
+msgstr ""
+
+msgid "Story Templates"
+msgstr ""
+
+msgid "Template loading aborted"
+msgstr ""
+
+msgid "Template saved."
+msgstr ""
+
+msgid "Templates plugin Online help"
+msgstr ""
