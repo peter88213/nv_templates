@@ -1,4 +1,4 @@
-# nv_templates
+# noveltree_templates
 
 The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.
 
