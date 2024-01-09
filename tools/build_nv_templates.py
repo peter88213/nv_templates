@@ -22,7 +22,7 @@ TARGET_FILE = f'{BUILD}nv_templates.py'
 
 
 def main():
-    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvtemplateslib', '../../novelyst_templates/src/')
+    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvtemplateslib', '../../noveltree_templates/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'noveltreelib', '../../noveltree/src/')
     print('Done.')
 

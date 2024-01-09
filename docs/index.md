@@ -22,9 +22,9 @@ In *noveltree*, you can define a narrative structure with *stages* on two differ
 
 ## Download and install
 
-[Download the latest release (version 1.0.0)](https://github.com/peter88213/noveltree_templates/raw/main/dist/nv_templates_v1.0.0.zip)
+[Download the latest release (version 1.0.1)](https://github.com/peter88213/noveltree_templates/raw/main/dist/nv_templates_v1.0.1.zip)
 
-- Extract the "nv_templates_v1.0.0" folder from the downloaded zipfile "nv_templates_v1.0.0.zip".
+- Extract the "nv_templates_v1.0.1" folder from the downloaded zipfile "nv_templates_v1.0.1.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---

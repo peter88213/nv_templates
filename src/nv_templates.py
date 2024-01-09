@@ -40,7 +40,7 @@ PLUGIN = f'{APPLICATION} plugin @release'
 class Plugin():
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    NOVELYST_API = '1.0'
+    NOVELTREE_API = '1.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/noveltree_templates'
     _HELP_URL = 'https://peter88213.github.io/noveltree_templates/usage'
