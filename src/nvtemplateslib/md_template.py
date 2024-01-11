@@ -123,7 +123,7 @@ class MdTemplate:
                     i += 1
                     chId = self._ctrl.add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
-                    scId = self._ctrl.add_stage(targetNode=chId, title=newTitle, stageLevel=1)
+                    scId = self._ctrl.add_stage(targetNode=chId, title=newTitle, scType=2)
                     newElement = self._mdl.novel.sections[scId]
                     addChapter = False
                 else:
