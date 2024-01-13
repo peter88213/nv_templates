@@ -73,7 +73,6 @@ class Plugin():
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
         self._fileTypes = [(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)]
 
         # Add an entry to the Help menu.
@@ -81,11 +80,13 @@ class Plugin():
 
     def disable_menu(self):
         """Disable menu entries when no project is open."""
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
+        self._templatesMenu.entryconfig(_('Load'), state='disabled')
+        self._templatesMenu.entryconfig(_('Save'), state='disabled')
 
     def enable_menu(self):
         """Enable menu entries when a project is open."""
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='normal')
+        self._templatesMenu.entryconfig(_('Load'), state='normal')
+        self._templatesMenu.entryconfig(_('Save'), state='normal')
 
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
