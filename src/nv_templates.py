@@ -43,7 +43,7 @@ class Plugin():
     NOVELTREE_API = '1.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/noveltree_templates'
-    _HELP_URL = 'https://peter88213.github.io/noveltree_templates/usage'
+    _HELP_URL = 'https://peter88213.github.io/noveltree-help/noveltree_templates/'
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the 'Tools' menu.
