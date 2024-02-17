@@ -1,4 +1,4 @@
-# noveltree_templates
+# nv_templates
 
 The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.
 
@@ -22,7 +22,7 @@ In *noveltree*, you can define a narrative structure with *stages* on two differ
 
 ## Download and install
 
-[Download the latest release (version 1.0.4)](https://github.com/peter88213/noveltree_templates/raw/main/dist/nv_templates_v1.0.4.zip)
+[Download the latest release (version 1.0.4)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v1.0.4.zip)
 
 - Extract the "nv_templates_v1.0.4" folder from the downloaded zipfile "nv_templates_v1.0.4.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
@@ -39,4 +39,4 @@ See the [instructions for use](usage)
 
 This is Open Source software, and the *nv_templates* plugin is licensed under GPLv3. See the
 [GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE) file.
+details, or consult the [LICENSE](https://github.com/peter88213/nv_templates/blob/main/LICENSE) file.

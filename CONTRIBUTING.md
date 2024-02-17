@@ -6,13 +6,13 @@ First, you need to know your language code according to ISO 639-1.
 
 For English, this is, for example, `en`, for German, it is `de`.
 
-**NOTE:** The procedure described below is greatly simplified if you create a language pack based on the [noveltree_xx](https://github.com/peter88213/noveltree_xx) template and use the tools provided for this purpose. 
+**NOTE:** The procedure described below is greatly simplified if you create a language pack based on the [nv_xx](https://github.com/peter88213/nv_xx) template and use the tools provided for this purpose. 
 
 ### Create a message catalog
 
 A "message catalog" is a dictionary for the plugin's messages and menu entries.
 
-For creating a message catalog, you download a template with all English messages from [here](https://github.com/peter88213/noveltree_templates/blob/main/i18n/messages.pot). 
+For creating a message catalog, you download a template with all English messages from [here](https://github.com/peter88213/nv_templates/blob/main/i18n/messages.pot). 
 
 
 Rename `messages.pot` to `<your language code>.po`, then give some specific information in the header data by modifying the following lines:

@@ -1,4 +1,4 @@
-[Project homepage](https://peter88213.github.io/noveltree_templates) > Instructions for use
+[Project homepage](https://peter88213.github.io/nv_templates) > Instructions for use
 
 --- 
 
@@ -16,7 +16,7 @@ The plugin adds a **Story Templates** entry to the *noveltree* **Tools** menu, a
 
 # Operation
 
-See the [online help](https://peter88213.github.io/noveltree-help/noveltree_templates/).
+See the [online help](https://peter88213.github.io/noveltree-help/nv_templates/).
 
 ---
 
@@ -24,4 +24,4 @@ See the [online help](https://peter88213.github.io/noveltree-help/noveltree_temp
 
 This is Open Source software, and the *nv_templates* plugin is licensed under GPLv3. See the
 [GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE) file.
+details, or consult the [LICENSE](https://github.com/peter88213/nv_templates/blob/main/LICENSE) file.

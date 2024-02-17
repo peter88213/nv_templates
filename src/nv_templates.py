@@ -8,7 +8,7 @@ The selected theme will be persistently applied.
 
 Requires Python 3.6+
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_templates
+For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This program is free software: you can redistribute it and/or modify
@@ -42,8 +42,8 @@ class Plugin():
     VERSION = '@release'
     NOVELTREE_API = '1.0'
     DESCRIPTION = 'A "Story Templates" manager'
-    URL = 'https://peter88213.github.io/noveltree_templates'
-    _HELP_URL = 'https://peter88213.github.io/noveltree-help/noveltree_templates/'
+    URL = 'https://peter88213.github.io/nv_templates'
+    _HELP_URL = 'https://peter88213.github.io/noveltree-help/nv_templates/'
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the 'Tools' menu.
