@@ -22,6 +22,7 @@ TARGET_FILE = f'{BUILD}nv_templates.py'
 
 
 def main():
+    os.makedirs(BUILD, exist_ok=True)
     inliner.run(SOURCE_FILE, TARGET_FILE, 'nvtemplateslib', '../../nv_templates/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'noveltreelib', '../../noveltree/src/')
     print('Done.')
