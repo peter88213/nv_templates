@@ -1,14 +1,14 @@
-[Projekt-Homepage](https://peter88213.github.io/nv_templates) > Gebrauchsanleitung
+[Projekt-Homepage](https://github.com/peter88213/nv_templates) > Gebrauchsanleitung
 
 --- 
 
-Ein [noveltree](https://peter88213.github.io/noveltree/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
+Ein [noveltree](https://github.com/peter88213/noveltree/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
 
 ---
 
 # Installation
 
-Wenn [noveltree](https://peter88213.github.io/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*nv_templates*-Plugin im *noveltree* Plugin-Verzeichnis.
+Wenn [noveltree](https://github.com/peter88213/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*nv_templates*-Plugin im *noveltree* Plugin-Verzeichnis.
 
 Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *noveltree* **Extras**-Menü, und einen **Template plugin Online Hilfe**-Eintrag an das **Hilfe**-Menü an. 
 
@@ -40,7 +40,7 @@ Das öffnet den Vorlagenordner mit dem Dateimanager des Betriebssystems, um die 
 
 # Konventionen
 
-In *noveltree* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/noveltree/de/help/arcs). *nv_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
+In *noveltree* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://github.com/peter88213/noveltree/de/help/arcs). *nv_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
 
 ## Struktur der Markdown-Datei
 

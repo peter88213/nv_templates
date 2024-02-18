@@ -1,10 +1,10 @@
 # nv_templates
 
-The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.
+The [noveltree](https://github.com/peter88213/noveltree/) Python program helps authors organize novels.
 
 *nv_templates* is a plugin for managing Markdown "Story Templates".
 
-![Screenshot](Screenshots/screen01.png)
+![Screenshot](docs/Screenshots/screen01.png)
 
 ## Features
 
@@ -18,22 +18,22 @@ In *noveltree*, you can define a narrative structure with *stages* on two differ
 
 ## Requirements
 
-- [noveltree](https://peter88213.github.io/noveltree/) version 1.0+
+- [noveltree](https://github.com/peter88213/noveltree/) version 1.8+
 
 ## Download and install
 
-[Download the latest release (version 1.0.4)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v1.0.4.zip)
+[Download the latest release (version 0.99.0)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v0.99.0.zip)
 
-- Extract the "nv_templates_v1.0.4" folder from the downloaded zipfile "nv_templates_v1.0.4.zip".
+- Extract the "nv_templates_v0.99.0" folder from the downloaded zipfile "nv_templates_v0.99.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
 
-[Changelog](changelog)
+[Changelog](docs/changelog.md)
 
 ## Usage
 
-See the [instructions for use](usage)
+See the [instructions for use](docs/usage.md)
 
 ## License
 

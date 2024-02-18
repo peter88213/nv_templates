@@ -40,10 +40,10 @@ PLUGIN = f'{APPLICATION} plugin @release'
 class Plugin():
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    NOVELTREE_API = '1.0'
+    NOVELTREE_API = '1.8'
     DESCRIPTION = 'A "Story Templates" manager'
-    URL = 'https://peter88213.github.io/nv_templates'
-    _HELP_URL = 'https://peter88213.github.io/noveltree-help/nv_templates/'
+    URL = 'https://github.com/peter88213/nv_templates'
+    _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the 'Tools' menu.

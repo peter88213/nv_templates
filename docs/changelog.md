@@ -1,9 +1,16 @@
-[Project home page](index) > Changelog
+[Project home page](../) > Changelog
 
 ------------------------------------------------------------------------
 
 ## Changelog
 
+
+### v1.1.0
+
+- Re-structure the website; adjust links.
+
+Based on novxlib v1.1.0
+Compatibility: noveltree v1.8 API
 
 ### v1.0.4
 

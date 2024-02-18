@@ -1,14 +1,39 @@
 # nv_templates
 
-A "Story Templates" manager plugin for [noveltree](https://peter88213.github.io/noveltree)
+The [noveltree](https://github.com/peter88213/noveltree/) Python program helps authors organize novels.
 
-Adds a **Story Templates** entry to the **Tools** menu to open a submenu for loading and saving the story structure. 
+*nv_templates* is a plugin for managing Markdown "Story Templates".
 
-For more information, see the [project homepage](https://peter88213.github.io/nv_templates) with description and download instructions.
+![Screenshot](docs/Screenshots/screen01.png)
 
-## Feedback? Ideas? Feature requests?
+## Features
 
-You can go to the [noveltree "discussions" forum](https://github.com/peter88213/noveltree/discussions) and start a thread.
+In *noveltree*, you can define a narrative structure with *stages* on two different levels. *nv_templates* faciliates the reuse of narrative structures.
+
+- Load the narrative structure from a Markdown template file:
+    - When loading a template into an empty project, a whole story framework is created.
+    - When loading a template into a project that has already chapters, a list of stages is created in an "unused" chapter.
+- Save the narrative structure to a Markdown template file. 
+
+
+## Requirements
+
+- [noveltree](https://github.com/peter88213/noveltree/) version 1.8+
+
+## Download and install
+
+[Download the latest release (version 1.1.0)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v1.1.0.zip)
+
+- Extract the "nv_templates_v1.1.0" folder from the downloaded zipfile "nv_templates_v1.1.0.zip".
+- Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
+
+---
+
+[Changelog](docs/changelog.md)
+
+## Usage
+
+See the [instructions for use](docs/usage.md)
 
 ## License
 
