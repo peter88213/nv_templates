@@ -1,12 +1,12 @@
 [![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v0.99.0.zip)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
-[![News](docs/img/news-button.png)](https://github.com/peter88213/noveltree/discussions/1)
+[![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_templates/)
 
 
 # nv_templates
 
-The [noveltree](https://github.com/peter88213/noveltree/) Python program helps authors organize novels.
+The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.
 
 *nv_templates* is a plugin for managing Markdown "Story Templates".
 
@@ -14,7 +14,7 @@ The [noveltree](https://github.com/peter88213/noveltree/) Python program helps a
 
 ## Features
 
-In *noveltree*, you can define a narrative structure with *stages* on two different levels. *nv_templates* faciliates the reuse of narrative structures.
+In *novelibre*, you can define a narrative structure with *stages* on two different levels. *nv_templates* faciliates the reuse of narrative structures.
 
 - Load the narrative structure from a Markdown template file:
     - When loading a template into an empty project, a whole story framework is created.
@@ -24,7 +24,7 @@ In *noveltree*, you can define a narrative structure with *stages* on two differ
 
 ## Requirements
 
-- [noveltree](https://github.com/peter88213/noveltree/) version 2.0+
+- [novelibre](https://github.com/peter88213/novelibre/) version 2.0+
 
 ## Download and install
 

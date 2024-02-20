@@ -2,15 +2,15 @@
 
 --- 
 
-A [noveltree](https://github.com/peter88213/noveltree/) plugin for managing Markdown "Story Templates". 
+A [novelibre](https://github.com/peter88213/novelibre/) plugin for managing Markdown "Story Templates". 
 
 ---
 
 # Installation
 
-If [noveltree](https://github.com/peter88213/noveltree/) is installed, the setup script auto-installs the *nv_templates* plugin in the *noveltree* plugin directory.
+If [novelibre](https://github.com/peter88213/novelibre/) is installed, the setup script auto-installs the *nv_templates* plugin in the *novelibre* plugin directory.
 
-The plugin adds a **Story Templates** entry to the *noveltree* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
+The plugin adds a **Story Templates** entry to the *novelibre* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
 
 ---
 

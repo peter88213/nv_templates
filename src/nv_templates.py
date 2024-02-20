@@ -1,4 +1,4 @@
-"""A "Story Templates" plugin for noveltree.
+"""A "Story Templates" plugin for novelibre.
 
 Version @release
 
@@ -103,7 +103,7 @@ class Plugin():
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _new_project(self):
-        """Create a noveltree project instance."""
+        """Create a novelibre project instance."""
         self._ctrl.new_project()
         self._load_template()
 
