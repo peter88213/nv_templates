@@ -48,7 +48,7 @@ Name the binary file **nv_templates.mo**.
 
 ### Install your translation for testing
 
-Add a subdirectory tree to **~/.noveltree/localele** and place *nv_templates.mo* there, like this:
+Add a subdirectory tree to **~/.novx/localele** and place *nv_templates.mo* there, like this:
 
 ```
 <your home directory>
