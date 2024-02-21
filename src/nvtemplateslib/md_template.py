@@ -48,7 +48,7 @@ class MdTemplate:
         if mdLines[0].startswith('# nv'):
             self.read_novelyst_structure(mdLines)
         else:
-            self.read_novelibre_structure(mdLines)
+            self.read_noveltree_structure(mdLines)
 
     def read_novelyst_structure(self, mdLines):
         chId = self._ctrl.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
@@ -88,7 +88,7 @@ class MdTemplate:
         except AttributeError:
             pass
 
-    def read_novelibre_structure(self, mdLines):
+    def read_noveltree_structure(self, mdLines):
         if self._mdl.novel.chapters:
             self.list_stages(mdLines)
         else:
