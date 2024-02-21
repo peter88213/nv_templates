@@ -40,7 +40,7 @@ PLUGIN = f'{APPLICATION} plugin @release'
 class Plugin():
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    API_VERSION = '2.0'
+    API_VERSION = '2.1'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
