@@ -55,13 +55,13 @@ class MdTemplate:
         scId = chId
         arcSection = False
         newElement = None
-        desc = []
+        notes = []
         for mdLine in mdLines:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
-                    desc = []
+                    newElement.notes = ''.join(notes).strip().replace('  ', ' ')
+                    notes = []
                     newElement = None
                 if mdLine.startswith('####'):
                     if arcSection:
@@ -80,11 +80,11 @@ class MdTemplate:
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
-                desc.append(f'{mdLine} ')
+                notes.append(f'{mdLine} ')
             else:
-                desc.append('\n')
+                notes.append('\n')
         try:
-            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+            newElement.notes = ''.join(notes).strip().replace('  ', ' ')
         except AttributeError:
             pass
 
@@ -99,13 +99,13 @@ class MdTemplate:
         chId = CH_ROOT
         addChapter = True
         newElement = None
-        desc = []
+        notes = []
         for mdLine in mdLines:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
-                    desc = []
+                    newElement.notes = ''.join(notes).strip().replace('  ', ' ')
+                    notes = []
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
@@ -129,11 +129,11 @@ class MdTemplate:
                 else:
                     scId = None
             elif mdLine:
-                desc.append(f'{mdLine} ')
+                notes.append(f'{mdLine} ')
             else:
-                desc.append('\n')
+                notes.append('\n')
         try:
-            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+            newElement.notes = ''.join(notes).strip().replace('  ', ' ')
         except AttributeError:
             pass
 
@@ -141,13 +141,13 @@ class MdTemplate:
         chId = self._ctrl.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         newElement = None
-        desc = []
+        notes = []
         for mdLine in mdLines:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
-                    desc = []
+                    newElement.notes = ''.join(notes).strip().replace('  ', ' ')
+                    notes = []
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
@@ -162,11 +162,11 @@ class MdTemplate:
                 if scId:
                     newElement = self._mdl.novel.sections[scId]
             elif mdLine:
-                desc.append(f'{mdLine} ')
+                notes.append(f'{mdLine} ')
             else:
-                desc.append('\n')
+                notes.append('\n')
         try:
-            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+            newElement.notes = ''.join(notes).strip().replace('  ', ' ')
         except AttributeError:
             pass
 
@@ -180,14 +180,14 @@ class MdTemplate:
             for scId in self._mdl.novel.tree.get_children(chId):
                 if self._mdl.novel.sections[scId].scType == 2:
                     mdLines.append(f'# {self._mdl.novel.sections[scId].title}')
-                    desc = self._mdl.novel.sections[scId].desc
-                    if desc:
-                        mdLines.append(desc.replace('\n', '\n\n'))
+                    notes = self._mdl.novel.sections[scId].notes
+                    if notes:
+                        mdLines.append(notes.replace('\n', '\n\n'))
                 elif self._mdl.novel.sections[scId].scType == 3:
                     mdLines.append(f'## {self._mdl.novel.sections[scId].title}')
-                    desc = self._mdl.novel.sections[scId].desc
-                    if desc:
-                        mdLines.append(desc.replace('\n', '\n\n'))
+                    notes = self._mdl.novel.sections[scId].notes
+                    if notes:
+                        mdLines.append(notes.replace('\n', '\n\n'))
 
         content = '\n\n'.join(mdLines)
         try:

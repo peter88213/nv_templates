@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v3.1.0
+
+- Turn "plain" text in templates into notes instead of descriptions.
+
+Compatibility: novelibre v3.0 API
+
 ### v3.0.0
 
 - Refactor the code for v3.0 API.
