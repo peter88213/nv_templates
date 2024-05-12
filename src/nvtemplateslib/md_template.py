@@ -18,7 +18,6 @@ class MdTemplate:
     """
     DESCRIPTION = _('Story Template')
     EXTENSION = '.md'
-    ARC_MARKER = '-'
 
     def __init__(self, filePath, model, controller):
         """Initialize instance variables.
