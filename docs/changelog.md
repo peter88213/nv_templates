@@ -5,6 +5,10 @@
 ## Changelog
 
 
+### v4.0.0
+
+Compatibility: novelibre v4.0 API
+
 ### v3.1.0
 
 - Turn "plain" text in templates into notes instead of descriptions.
