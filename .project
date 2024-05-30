@@ -3,6 +3,7 @@
 	<name>nv_templates</name>
 	<comment></comment>
 	<projects>
+		<project>novelibre</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

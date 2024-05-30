@@ -27,6 +27,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
+from nvlib.plugin.plugin_base import PluginBase
 from nvtemplateslib.md_template import MdTemplate
 from nvtemplateslib.nvtemplates_globals import Error
 from nvtemplateslib.nvtemplates_globals import _
@@ -37,21 +38,40 @@ APPLICATION = _('Story Templates')
 PLUGIN = f'{APPLICATION} plugin @release'
 
 
-class Plugin():
+class Plugin(PluginBase):
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    API_VERSION = '4.0'
+    API_VERSION = '4.3'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
+
+    def disable_menu(self):
+        """Disable menu entries when no project is open.
+        
+        Overrides the superclass method.
+        """
+        self._templatesMenu.entryconfig(_('Load'), state='disabled')
+        self._templatesMenu.entryconfig(_('Save'), state='disabled')
+
+    def enable_menu(self):
+        """Enable menu entries when a project is open.
+        
+        Overrides the superclass method.
+        """
+        self._templatesMenu.entryconfig(_('Load'), state='normal')
+        self._templatesMenu.entryconfig(_('Save'), state='normal')
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            model -- Reference to the model instance of the application.
-            view -- Reference to the main view instance of the application.
-            controller -- Reference to the main controller instance of the application.
+            model -- reference to the main model instance of the application.
+            view -- reference to the main view instance of the application.
+            controller -- reference to the main controller instance of the application.
+            prefs -- reference to the application's global dictionary with settings and options.
+        
+        Overrides the superclass method.
         """
         self._mdl = model
         self._ui = view
@@ -77,16 +97,6 @@ class Plugin():
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
-
-    def disable_menu(self):
-        """Disable menu entries when no project is open."""
-        self._templatesMenu.entryconfig(_('Load'), state='disabled')
-        self._templatesMenu.entryconfig(_('Save'), state='disabled')
-
-    def enable_menu(self):
-        """Enable menu entries when a project is open."""
-        self._templatesMenu.entryconfig(_('Load'), state='normal')
-        self._templatesMenu.entryconfig(_('Save'), state='normal')
 
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
