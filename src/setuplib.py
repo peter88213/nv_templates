@@ -65,8 +65,8 @@ def cp_templates(templateDir):
         with os.scandir(SAMPLE_PATH) as files:
             for file in files:
                 if not os.path.isfile(f'{templateDir}/{file.name}'):
+                    output(f'Copying "{file.name}" ...')
                     copy2(f'{SAMPLE_PATH}/{file.name}', f'{templateDir}/{file.name}')
-                    output(f'Copying "{file.name}"')
                 else:
                     output(f'Keeping "{file.name}"')
     except:
