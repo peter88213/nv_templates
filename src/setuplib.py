@@ -20,7 +20,7 @@ except ModuleNotFoundError:
 
 PLUGIN = 'nv_templates.py'
 VERSION = ' @release'
-SAMPLE_PATH = 'sample/'
+SAMPLE_PATH = 'nv_templates_sample/'
 
 root = Tk()
 processInfo = Label(root, text='')
