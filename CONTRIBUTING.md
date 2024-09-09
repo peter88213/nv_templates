@@ -48,7 +48,7 @@ Name the binary file **nv_templates.mo**.
 
 ### Install your translation for testing
 
-Add a subdirectory tree to **~/.novx/localele** and place *nv_templates.mo* there, like this:
+Add a subdirectory tree to **~/.novx/locale**, and place *nv_templates.mo* there, like this:
 
 ```
 <your home directory>
@@ -75,13 +75,45 @@ An easy way may be to put a posting in the [novelibre forum](https://github.com/
 
 ## Development
 
+*nv_templates* depends on the [novxlib](https://github.com/peter88213/novxlib) and [templatesnv](https://github.com/peter88213/templatesnv) libraries which must be present in your file system. It is organized as an Eclipse PyDev project. The official release branch on GitHub is *main*.
+
+### Mandatory directory structure for building the plugin package
+
+```
+.
+├── novelibre/
+│   ├── i18n/
+│   ├── src/
+│   │   └── nvlib/
+│   └── tools/ 
+│       ├── msgfmt.py
+│       ├── inliner.py
+│       ├── package_builder.py
+│       ├── pgettext.py
+│       ├── translate_de.py
+│       └── translations.py
+├── novxlib/
+│   └── src/
+│       └── novxlib/
+└── nv_templates/
+    ├── i18n/
+    ├── src/
+	 │   └── nvtemplateslib/
+    └── tools/ 
+        └── build.py
+```
+
 ### Conventions
 
 See https://github.com/peter88213/novxlib/blob/main/docs/conventions.md
 
 ## Development tools
 
-- [Python](https://python.org) version 3.10.
+- [Python](https://python.org) version 3.12.
+- **build.py** starts the building and packaging process.
+
+### Optional IDE
 - [Eclipse IDE](https://eclipse.org) with [PyDev](https://pydev.org) and *EGit*.
-- *Apache Ant* is used for building the application.
+- Apache Ant can be used for starting the **build.py** script.
+
 
