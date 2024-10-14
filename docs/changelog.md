@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### Version 4.1.3
+
+- Update "Story templates" submenu entries.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.7.1
 
 ### Version 4.1.2
 

@@ -51,16 +51,16 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(_('Load'), state='disabled')
-        self._templatesMenu.entryconfig(_('Save'), state='disabled')
+        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        self._templatesMenu.entryconfig(f"{_('Save')}...", state='disabled')
 
     def enable_menu(self):
         """Enable menu entries when a project is open.
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(_('Load'), state='normal')
-        self._templatesMenu.entryconfig(_('Save'), state='normal')
+        self._templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
+        self._templatesMenu.entryconfig(f"{_('Save')}...", state='normal')
 
     def install(self, model, view, controller, prefs=None):
         """Add a submenu to the 'Tools' menu.
@@ -86,8 +86,8 @@ class Plugin(PluginBase):
 
         # Create "Story Templates" submenu.
         self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
-        self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
+        self._templatesMenu.add_command(label=f"{_('Load')}...", command=self._load_template)
+        self._templatesMenu.add_command(label=f"{_('Save')}...", command=self._save_template)
         self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
 
         # Add an entry to the "File > New" menu.
