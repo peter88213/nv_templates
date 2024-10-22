@@ -34,9 +34,6 @@ from nvtemplateslib.nvtemplates_globals import Error
 from nvtemplateslib.nvtemplates_globals import norm_path
 import tkinter as tk
 
-APPLICATION = _('Story Templates')
-PLUGIN = f'{APPLICATION} plugin @release'
-
 
 class Plugin(PluginBase):
     """A 'Story Templates' plugin class."""
@@ -45,6 +42,8 @@ class Plugin(PluginBase):
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
+
+    FEATURE = _('Story Templates')
 
     def disable_menu(self):
         """Disable menu entries when no project is open.
@@ -94,7 +93,7 @@ class Plugin(PluginBase):
         self._ui.newMenu.add_command(label=_('Create from template...'), command=self._new_project)
 
         # Create Tools menu entry.
-        self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
+        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self._templatesMenu)
         self._fileTypes = [(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)]
 
         # Add an entry to the Help menu.
