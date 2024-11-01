@@ -4,19 +4,23 @@
 
 ## Changelog
 
+### Version 4.1.4
+
+- Refactor, replacing global constants with class constants.
+
+Compatibility: novelibre 4.3 API
+
 ### Version 4.1.3
 
 - Update "Story templates" submenu entries.
 
 Compatibility: novelibre 4.3 API
-Based on novxlib 4.7.1
 
 ### Version 4.1.2
 
 - Refactor: Change import order for a quick start.
 
 Compatibility: novelibre 4.3 API
-Based on novxlib 4.6.3
 
 ### Version 4.1.1
 
@@ -24,14 +28,12 @@ Based on novxlib 4.6.3
   making the prefs argument of the Plugin.install() method optional.
 
 Compatibility: novelibre 4.3 API
-Based on novxlib 4.1.0
 
 ### Version 4.1.0
 
 - Refactor the code for better maintainability.
 
 Compatibility: novelibre 4.3 API
-Based on novxlib 4.1.0
 
 ### Version 4.0.0
 
@@ -54,8 +56,6 @@ Compatibility: novelibre 3.0 API
 ### Version 2.1.0
 
 Update for "novelibre".
-
-Based on novxlib 1.1.0
 
 ### Version 2.0.0
 
