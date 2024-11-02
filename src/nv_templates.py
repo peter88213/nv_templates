@@ -27,10 +27,10 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
-from nvtemplateslib.nvtemplates_globals import _
 from nvlib.plugin.plugin_base import PluginBase
 from nvtemplateslib.md_template import MdTemplate
 from nvtemplateslib.nvtemplates_globals import Error
+from nvtemplateslib.nvtemplates_globals import _
 from nvtemplateslib.nvtemplates_globals import norm_path
 import tkinter as tk
 
