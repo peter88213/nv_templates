@@ -38,7 +38,7 @@ import tkinter as tk
 class Plugin(PluginBase):
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    API_VERSION = '4.3'
+    API_VERSION = '5.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
