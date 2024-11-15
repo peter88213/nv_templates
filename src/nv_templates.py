@@ -41,7 +41,7 @@ class Plugin(PluginBase):
     API_VERSION = '5.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
-    _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_templates/'
+    _HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_templates/'
 
     FEATURE = _('Story Templates')
 
