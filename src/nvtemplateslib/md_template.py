@@ -44,50 +44,6 @@ class MdTemplate:
         except:
             raise Error(f'{_("Cannot read file")}: "{norm_path(self.filePath)}".')
 
-        if mdLines[0].startswith('# nv'):
-            self.read_novelyst_structure(mdLines)
-        else:
-            self.read_noveltree_structure(mdLines)
-
-    def read_novelyst_structure(self, mdLines):
-        chId = self._ctrl.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
-        scId = chId
-        arcSection = False
-        newElement = None
-        notes = []
-        for mdLine in mdLines:
-            mdLine = mdLine.strip()
-            if mdLine.startswith('#'):
-                if newElement is not None:
-                    newElement.notes = ''.join(notes).strip().replace('  ', ' ')
-                    notes = []
-                    newElement = None
-                if mdLine.startswith('####'):
-                    if arcSection:
-                        # Add a second-level stage.
-                        newTitle = mdLine[5:]
-                        scId = self._ctrl.add_stage(targetNode=scId, title=newTitle, scType=3)
-                        if scId:
-                            newElement = self._mdl.novel.sections[scId]
-                elif mdLine.startswith('###'):
-                    if not arcSection:
-                        # Add a first-level stage.
-                        newTitle = mdLine[4:]
-                        scId = self._ctrl.add_stage(targetNode=scId, title=newTitle, scType=2)
-                        if scId:
-                            newElement = self._mdl.novel.sections[scId]
-                elif mdLine.strip() == '# pl':
-                    arcSection = True
-            elif mdLine:
-                notes.append(f'{mdLine} ')
-            else:
-                notes.append('\n')
-        try:
-            newElement.notes = ''.join(notes).strip().replace('  ', ' ')
-        except AttributeError:
-            pass
-
-    def read_noveltree_structure(self, mdLines):
         if self._mdl.novel.chapters:
             self.list_stages(mdLines)
         else:
