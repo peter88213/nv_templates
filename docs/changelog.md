@@ -4,7 +4,10 @@
 
 ## Changelog
 
-### Version 5.0.0
+### Version 5.0.1
+
+- Update the sample templates.
+- The installation script now overwrites existing templates.
 
 Library update:
 - Refactor the code for better maintainability.

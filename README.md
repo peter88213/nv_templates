@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.0.pyzw)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.1.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_templates/)
@@ -28,12 +28,23 @@ In *novelibre*, you can define a narrative structure with *stages* on two differ
 
 ## Download and install
 
+---
+
+**Note**
+
+The plugin comes with sample templates which are automatically
+copied into the *templates* folder of the *novelibre* installation. 
+Existing files are overwritten. So if you customize your templates, 
+better rename them.  
+
+---
+
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_templates_v5.0.0.pyzw](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.0.pyzw)
+Download the latest release [nv_templates_v5.0.1.pyzw](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.1.pyzw)
 
-- Launch *nv_templates_v5.0.0.pyzw* by double-clicking (Windows/Linux desktop),
-- or execute `python nv_templates_v5.0.0.pyzw` (Windows), resp. `python3 nv_templates_v5.0.0.pyzw` (Linux) on the command line.
+- Launch *nv_templates_v5.0.1.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python nv_templates_v5.0.1.pyzw` (Windows), resp. `python3 nv_templates_v5.0.1.pyzw` (Linux) on the command line.
 
 #### Important
 
@@ -49,9 +60,9 @@ the zip file.
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_templates_v5.0.0.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.0.zip)
+The package is also available in zip format: [nv_templates_v5.0.1.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.0.1.zip)
 
-- Extract the *nv_templates_v5.0.0* folder from the downloaded zipfile "nv_templates_v5.0.0.zip".
+- Extract the *nv_templates_v5.0.1* folder from the downloaded zipfile "nv_templates_v5.0.1.zip".
 - Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 
@@ -62,6 +73,15 @@ The package is also available in zip format: [nv_templates_v5.0.0.zip](https://g
 ## Usage
 
 See the [online manual](https://peter88213.github.io/nvhelp-en/nv_templates/)
+
+## Credits
+
+- The notes in the *Hero's journey* sample template are from the
+  [Wikipedia page](https://en.wikipedia.org/wiki/Hero%27s_journey) on this topic.
+- The notes in the *Save The Cat* sample template are based on the
+  [Wikipedia page](https://en.wikipedia.org/wiki/Save_the_Cat!:_The_Last_Book_on_Screenwriting_You%27ll_Ever_Need) 
+  on this topic.
+
 
 ## License
 

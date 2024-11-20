@@ -28,6 +28,17 @@ In *novelibre*, you can define a narrative structure with *stages* on two differ
 
 ## Download and install
 
+---
+
+**Note**
+
+The plugin comes with sample templates which are automatically
+copied into the *templates* folder of the *novelibre* installation. 
+Existing files are overwritten. So if you customize your templates, 
+better rename them.  
+
+---
+
 ### Default: Executable Python zip archive
 
 Download the latest release [nv_templates_v0.99.0.pyzw](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v0.99.0.pyzw)
@@ -62,6 +73,15 @@ The package is also available in zip format: [nv_templates_v0.99.0.zip](https://
 ## Usage
 
 See the [online manual](https://peter88213.github.io/nvhelp-en/nv_templates/)
+
+## Credits
+
+- The notes in the *Hero's journey* sample template are from the
+  [Wikipedia page](https://en.wikipedia.org/wiki/Hero%27s_journey) on this topic.
+- The notes in the *Save The Cat* sample template are based on the
+  [Wikipedia page](https://en.wikipedia.org/wiki/Save_the_Cat!:_The_Last_Book_on_Screenwriting_You%27ll_Ever_Need) 
+  on this topic.
+
 
 ## License
 
