@@ -4,6 +4,14 @@
 
 ## Changelog
 
+### Version 5.0.0
+
+Library update:
+- Refactor the code for better maintainability.
+
+API: 5.0
+Based on novelibre 5.0.0
+
 ### Version 4.1.4
 
 - Refactor, replacing global constants with class constants.

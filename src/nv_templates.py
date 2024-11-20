@@ -27,7 +27,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
-from nvlib.plugin.plugin_base import PluginBase
+from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtemplateslib.md_template import MdTemplate
 from nvtemplateslib.nvtemplates_globals import Error
 from nvtemplateslib.nvtemplates_globals import _

@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.1.4\n"
-"POT-Creation-Date: 2024-11-01 05:59:55\n"
-"PO-Revision-Date: 2024-11-01 05:59:55\n"
+"Project-Id-Version: 5.0.0\n"
+"POT-Creation-Date: 2024-11-20 14:40:00\n"
+"PO-Revision-Date: 2024-11-20 14:40:00\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -61,6 +61,6 @@ msgstr "Vorlage gespeichert"
 msgid "Templates plugin Online help"
 msgstr "Vorlagen-Plugin Online-Hilfe"
 
-msgid "nvhelp-en"
-msgstr "nvhelp-de"
+msgid "https://peter88213.github.io/nvhelp-en"
+msgstr "https://peter88213.github.io/nvhelp-de"
 
