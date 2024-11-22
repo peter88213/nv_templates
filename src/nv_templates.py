@@ -1,11 +1,5 @@
 """A "Story Templates" plugin for novelibre.
 
-Version @release
-
-Adds a 'Add Story Templates' entry to the 'Tools' menu to open a window
-with a combobox that lists all available themes. 
-The selected theme will be persistently applied.  
-
 Requires Python 3.6+
 Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/nv_templates
