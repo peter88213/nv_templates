@@ -107,7 +107,7 @@ class Plugin(PluginBase):
 
     def _new_project(self):
         """Create a novelibre project instance."""
-        self._ctrl.new_project()
+        self._ctrl.create_project()
         self._load_template()
 
     def _open_folder(self):

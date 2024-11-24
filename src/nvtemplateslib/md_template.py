@@ -92,19 +92,19 @@ class MdTemplate:
                     # Add a 2nd level stage.
                     if addChapter:
                         i += 1
-                        chId = self._ctrl.add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        chId = self._ctrl.add_new_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                         scId = chId
                     newTitle = mdLine[3:].strip()
-                    scId = self._ctrl.add_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=3)
                     newElement = self._mdl.novel.sections[scId]
-                    scId = self._ctrl.add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
+                    scId = self._ctrl.add_new_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
                     i += 1
-                    chId = self._ctrl.add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    chId = self._ctrl.add_new_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
-                    scId = self._ctrl.add_stage(targetNode=chId, title=newTitle, scType=2)
+                    scId = self._ctrl.add_new_stage(targetNode=chId, title=newTitle, scType=2)
                     newElement = self._mdl.novel.sections[scId]
                     addChapter = False
                 else:
@@ -119,7 +119,7 @@ class MdTemplate:
             pass
 
     def _create_stages(self, mdLines):
-        chId = self._ctrl.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ctrl.add_new_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         newElement = None
         notes = []
@@ -133,11 +133,11 @@ class MdTemplate:
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._ctrl.add_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=3)
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._ctrl.add_stage(targetNode=scId, title=newTitle, scType=2)
+                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=2)
                 else:
                     scId = None
                 if scId:
