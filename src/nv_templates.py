@@ -128,9 +128,11 @@ class Plugin(PluginBase):
 
     def _save_template(self):
         """Save a structure of "Todo" chapters and scenes to a Markdown file."""
-        fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
-                                              defaultextension=self._fileTypes[0][1],
-                                              initialdir=self._templateDir)
+        fileName = filedialog.asksaveasfilename(
+            filetypes=self._fileTypes,
+            defaultextension=self._fileTypes[0][1],
+            initialdir=self._templateDir
+            )
         if not fileName:
             return
 
