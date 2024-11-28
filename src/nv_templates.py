@@ -95,7 +95,7 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        # self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
 
     def unlock(self):
         """Enable menu entries when the project is unlocked.
@@ -106,7 +106,7 @@ class Plugin(PluginBase):
 
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
-        if not self._ctrl.check_lock():
+        if self._ctrl.check_lock():
             return
 
         fileName = filedialog.askopenfilename(
