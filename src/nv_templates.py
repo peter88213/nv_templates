@@ -95,7 +95,7 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        # self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
 
     def unlock(self):
         """Enable menu entries when the project is unlocked.
