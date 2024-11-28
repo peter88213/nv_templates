@@ -4,8 +4,9 @@
 
 ## Changelog
 
-### Version 5.0.1
+### Version 5.0.2
 
+- Disable the "Load" menu entry while the project is locked.
 - Update the sample templates.
 - The installation script now overwrites existing templates.
 

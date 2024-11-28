@@ -18,7 +18,6 @@ GNU General Public License for more details.
 import os
 from pathlib import Path
 from tkinter import filedialog
-from tkinter import messagebox
 import webbrowser
 
 from nvlib.controller.plugin.plugin_base import PluginBase
@@ -91,8 +90,25 @@ class Plugin(PluginBase):
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
 
+    def lock(self):
+        """Disable menu entries when the project is locked.
+        
+        Overrides the superclass method.
+        """
+        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+
+    def unlock(self):
+        """Enable menu entries when the project is unlocked.
+        
+        Overrides the superclass method.
+        """
+        self._templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
+
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
+        if not self._ctrl.check_lock():
+            return
+
         fileName = filedialog.askopenfilename(
             filetypes=self._fileTypes,
             defaultextension=self._fileTypes[0][1],
@@ -103,7 +119,7 @@ class Plugin(PluginBase):
                 templates = MdTemplate(fileName, self._mdl, self._ctrl)
                 templates.read()
             except Error as ex:
-                messagebox.showerror(_('Template loading aborted'), str(ex))
+                self._ui.show_error(str(ex), title=_('Template loading aborted'))
 
     def _new_project(self):
         """Create a novelibre project instance."""
@@ -140,7 +156,7 @@ class Plugin(PluginBase):
             templates = MdTemplate(fileName, self._mdl, self._ctrl)
             templates.write()
         except Error as ex:
-            messagebox.showerror(_('Cannot save template'), str(ex))
+            self._ui.show_error(str(ex), title=_('Cannot save template'))
 
         self._ui.set_status(_('Template saved.'))
 
