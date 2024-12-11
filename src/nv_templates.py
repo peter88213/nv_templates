@@ -39,16 +39,16 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
-        self._templatesMenu.entryconfig(f"{_('Save')}...", state='disabled')
+        self.templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        self.templatesMenu.entryconfig(f"{_('Save')}...", state='disabled')
 
     def enable_menu(self):
         """Enable menu entries when a project is open.
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
-        self._templatesMenu.entryconfig(f"{_('Save')}...", state='normal')
+        self.templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
+        self.templatesMenu.entryconfig(f"{_('Save')}...", state='normal')
 
     def install(self, model, view, controller):
         """Add a submenu to the 'Tools' menu.
@@ -73,34 +73,46 @@ class Plugin(PluginBase):
         self.templateManager = TemplateManager(model, view, controller, templateDir)
 
         # Create "Story Templates" submenu.
-        self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._templatesMenu.add_command(label=f"{_('Load')}...", command=self.templateManager.load_template)
-        self._templatesMenu.add_command(label=f"{_('Save')}...", command=self.templateManager.save_template)
-        self._templatesMenu.add_command(label=_('Open folder'), command=self.templateManager.open_folder)
+        self.templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
+        self.templatesMenu.add_command(label=f"{_('Load')}...", command=self.load_template)
+        self.templatesMenu.add_command(label=f"{_('Save')}...", command=self.save_template)
+        self.templatesMenu.add_command(label=_('Open folder'), command=self.open_folder)
 
         # Add an entry to the "File > New" menu.
-        self._ui.newMenu.add_command(label=_('Create from template...'), command=self.templateManager.new_project)
+        self._ui.newMenu.add_command(label=_('Create from template...'), command=self.new_project)
 
         # Create Tools menu entry.
-        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self._templatesMenu)
+        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self.templatesMenu)
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=self.open_help_page)
+
+    def load_template(self):
+        self.templateManager.load_template()
 
     def lock(self):
         """Disable menu entries when the project is locked.
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        self.templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+
+    def new_project(self):
+        self.templateManager.new_project()
+
+    def open_folder(self):
+        self.templateManager.open_folder()
 
     def open_help_page(self, event=None):
         webbrowser.open(self.HELP_URL)
+
+    def save_template(self):
+        self.templateManager.save_template()
 
     def unlock(self):
         """Enable menu entries when the project is unlocked.
         
         Overrides the superclass method.
         """
-        self._templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
+        self.templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
 

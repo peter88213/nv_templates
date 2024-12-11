@@ -11,6 +11,7 @@ from mvclib.controller.service_base import ServiceBase
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvtemplates.md_template import MdTemplate
+from nvtemplates.nvtemplates_locale import _
 
 
 class TemplateManager(ServiceBase):
@@ -60,8 +61,8 @@ class TemplateManager(ServiceBase):
     def save_template(self):
         """Save a structure of "Todo" chapters and scenes to a Markdown file."""
         fileName = filedialog.asksaveasfilename(
-            filetypes=self._fileTypes,
-            defaultextension=self._fileTypes[0][1],
+            filetypes=[(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)],
+            defaultextension=MdTemplate.EXTENSION,
             initialdir=self.templateDir
             )
         if not fileName:

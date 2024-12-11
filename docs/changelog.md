@@ -4,7 +4,7 @@
 
 ## Changelog
 
-### Version 5.0.4
+### Version 5.0.5
 
 - Disable the "Load" menu entry while the project is locked.
 - Update the sample templates.
