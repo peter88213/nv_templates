@@ -4,10 +4,10 @@ Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from nvtemplateslib.nvtemplates_globals import CH_ROOT
-from nvtemplateslib.nvtemplates_globals import Error
-from nvtemplateslib.nvtemplates_globals import _
-from nvtemplateslib.nvtemplates_globals import norm_path
+from nvlib.novx_globals import CH_ROOT
+from nvlib.novx_globals import Error
+from nvlib.novx_globals import norm_path
+from nvtemplates.nvtemplates_locale import _
 
 
 class MdTemplate:

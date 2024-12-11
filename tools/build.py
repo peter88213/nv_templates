@@ -12,13 +12,13 @@ import sys
 sys.path.insert(0, f'{os.getcwd()}/../../novelibre/tools')
 from package_builder import PackageBuilder
 
-VERSION = '5.0.3'
+VERSION = '5.0.4'
 
 
 class PluginBuilder(PackageBuilder):
 
     PRJ_NAME = 'nv_templates'
-    LOCAL_LIB = 'nvtemplateslib'
+    LOCAL_LIB = 'nvtemplates'
     GERMAN_TRANSLATION = True
 
     def add_extras(self):

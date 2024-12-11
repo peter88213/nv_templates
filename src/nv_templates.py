@@ -15,17 +15,13 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-import os
 from pathlib import Path
-from tkinter import filedialog
 import webbrowser
 
 from nvlib.controller.plugin.plugin_base import PluginBase
-from nvtemplateslib.md_template import MdTemplate
-from nvtemplateslib.nvtemplates_globals import Error
-from nvtemplateslib.nvtemplates_globals import _
-from nvtemplateslib.nvtemplates_globals import norm_path
+from nvtemplates.nvtemplates_locale import _
 import tkinter as tk
+from nvtemplates.template_manager import TemplateManager
 
 
 class Plugin(PluginBase):
@@ -34,7 +30,7 @@ class Plugin(PluginBase):
     API_VERSION = '5.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
-    _HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_templates/'
+    HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_templates/'
 
     FEATURE = _('Story Templates')
 
@@ -70,25 +66,26 @@ class Plugin(PluginBase):
         super().install(model, view, controller)
         try:
             homeDir = str(Path.home()).replace('\\', '/')
-            self._templateDir = f'{homeDir}/.novx/templates'
+            templateDir = f'{homeDir}/.novx/templates'
         except:
-            self._templateDir = '.'
+            templateDir = '.'
+
+        self.templateManager = TemplateManager(model, view, controller, templateDir)
 
         # Create "Story Templates" submenu.
         self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._templatesMenu.add_command(label=f"{_('Load')}...", command=self._load_template)
-        self._templatesMenu.add_command(label=f"{_('Save')}...", command=self._save_template)
-        self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
+        self._templatesMenu.add_command(label=f"{_('Load')}...", command=self.templateManager.load_template)
+        self._templatesMenu.add_command(label=f"{_('Save')}...", command=self.templateManager.save_template)
+        self._templatesMenu.add_command(label=_('Open folder'), command=self.templateManager.open_folder)
 
         # Add an entry to the "File > New" menu.
-        self._ui.newMenu.add_command(label=_('Create from template...'), command=self._new_project)
+        self._ui.newMenu.add_command(label=_('Create from template...'), command=self.templateManager.new_project)
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self._templatesMenu)
-        self._fileTypes = [(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)]
 
         # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
+        self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=self.open_help_page)
 
     def lock(self):
         """Disable menu entries when the project is locked.
@@ -97,66 +94,13 @@ class Plugin(PluginBase):
         """
         self._templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
 
+    def open_help_page(self, event=None):
+        webbrowser.open(self.HELP_URL)
+
     def unlock(self):
         """Enable menu entries when the project is unlocked.
         
         Overrides the superclass method.
         """
         self._templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
-
-    def _load_template(self):
-        """Create a structure of "Todo" chapters and scenes from a Markdown file."""
-        if self._ctrl.check_lock():
-            return
-
-        fileName = filedialog.askopenfilename(
-            filetypes=self._fileTypes,
-            defaultextension=self._fileTypes[0][1],
-            initialdir=self._templateDir
-            )
-        if fileName:
-            try:
-                templates = MdTemplate(fileName, self._mdl, self._ctrl)
-                templates.read()
-            except Error as ex:
-                self._ui.show_error(str(ex), title=_('Template loading aborted'))
-
-    def _new_project(self):
-        """Create a novelibre project instance."""
-        self._ctrl.create_project()
-        self._load_template()
-
-    def _open_folder(self):
-        """Open the templates folder with the OS file manager."""
-        try:
-            os.startfile(norm_path(self._templateDir))
-            # Windows
-        except:
-            try:
-                os.system('xdg-open "%s"' % norm_path(self._templateDir))
-                # Linux
-            except:
-                try:
-                    os.system('open "%s"' % norm_path(self._templateDir))
-                    # Mac
-                except:
-                    pass
-
-    def _save_template(self):
-        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
-        fileName = filedialog.asksaveasfilename(
-            filetypes=self._fileTypes,
-            defaultextension=self._fileTypes[0][1],
-            initialdir=self._templateDir
-            )
-        if not fileName:
-            return
-
-        try:
-            templates = MdTemplate(fileName, self._mdl, self._ctrl)
-            templates.write()
-        except Error as ex:
-            self._ui.show_error(str(ex), title=_('Cannot save template'))
-
-        self._ui.set_status(_('Template saved.'))
 
