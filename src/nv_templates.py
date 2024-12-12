@@ -15,13 +15,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-from pathlib import Path
 import webbrowser
 
 from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtemplates.nvtemplates_locale import _
-import tkinter as tk
 from nvtemplates.template_manager import TemplateManager
+import tkinter as tk
 
 
 class Plugin(PluginBase):
@@ -64,13 +63,7 @@ class Plugin(PluginBase):
         Extends the superclass method.
         """
         super().install(model, view, controller)
-        try:
-            homeDir = str(Path.home()).replace('\\', '/')
-            templateDir = f'{homeDir}/.novx/templates'
-        except:
-            templateDir = '.'
-
-        self.templateManager = TemplateManager(model, view, controller, templateDir)
+        self.templateManager = TemplateManager(model, view, controller)
 
         # Create "Story Templates" submenu.
         self.templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)

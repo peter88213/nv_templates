@@ -5,6 +5,7 @@ For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
+from pathlib import Path
 from tkinter import filedialog
 
 from mvclib.controller.service_base import ServiceBase
@@ -16,9 +17,13 @@ from nvtemplates.nvtemplates_locale import _
 
 class TemplateManager(ServiceBase):
 
-    def __init__(self, model, view, controller, templateDir):
+    def __init__(self, model, view, controller):
         super().__init__(model, view, controller)
-        self.templateDir = templateDir
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            self.templateDir = f'{homeDir}/.novx/templates'
+        except:
+            self.templateDir = '.'
 
     def load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""

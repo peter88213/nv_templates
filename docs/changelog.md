@@ -4,7 +4,7 @@
 
 ## Changelog
 
-### Version 5.0.5
+### Version 5.0.6
 
 - Disable the "Load" menu entry while the project is locked.
 - Update the sample templates.
@@ -14,7 +14,7 @@ Library update:
 - Refactor the code for better maintainability.
 
 API: 5.0
-Based on novelibre 5.0.24
+Based on novelibre 5.0.26
 
 ### Version 4.1.4
 
