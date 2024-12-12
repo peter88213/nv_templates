@@ -78,7 +78,7 @@ class Plugin(PluginBase):
         self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self.templatesMenu)
 
         # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=self.open_help_page)
+        self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=self.open_help)
 
     def load_template(self):
         self.templateManager.load_template()
@@ -96,7 +96,7 @@ class Plugin(PluginBase):
     def open_folder(self):
         self.templateManager.open_folder()
 
-    def open_help_page(self, event=None):
+    def open_help(self, event=None):
         webbrowser.open(self.HELP_URL)
 
     def save_template(self):
