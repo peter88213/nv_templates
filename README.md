@@ -12,6 +12,8 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ![Screenshot](docs/Screenshots/screen01.png)
 
+![Screenshot](docs/Screenshots/structure01.png)
+
 ## Features
 
 In *novelibre*, you can define a narrative structure with *stages* on two different levels. *nv_templates* faciliates the reuse of narrative structures.
