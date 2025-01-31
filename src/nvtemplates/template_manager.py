@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 from tkinter import filedialog
 
-from mvclib.controller.service_base import ServiceBase
+from nvlib.controller.services.service_base import ServiceBase
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvtemplates.md_template import MdTemplate
