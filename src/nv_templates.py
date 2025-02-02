@@ -17,8 +17,8 @@ GNU General Public License for more details.
 """
 import webbrowser
 
-from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtemplates.nvtemplates_locale import _
+from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtemplates.template_manager import TemplateManager
 import tkinter as tk
 
