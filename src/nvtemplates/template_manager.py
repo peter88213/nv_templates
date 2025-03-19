@@ -40,7 +40,10 @@ class TemplateManager(ServiceBase):
                 templates = MdTemplate(fileName, self._mdl, self._ctrl)
                 templates.read()
             except Error as ex:
-                self._ui.show_error(str(ex), title=_('Template loading aborted'))
+                self._ui.show_error(
+                    message=_('Template loading aborted'),
+                    detail=str(ex)
+                    )
 
     def new_project(self):
         """Create a novelibre project instance."""
@@ -77,7 +80,10 @@ class TemplateManager(ServiceBase):
             templates = MdTemplate(fileName, self._mdl, self._ctrl)
             templates.write()
         except Error as ex:
-            self._ui.show_error(str(ex), title=_('Cannot save template'))
+            self._ui.show_error(
+                message=_('Cannot save template'),
+                detail=str(ex)
+                )
 
         self._ui.set_status(_('Template saved.'))
 

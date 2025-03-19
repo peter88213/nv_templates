@@ -4,6 +4,15 @@
 
 ## Changelog
 
+
+### Version 5.1.0
+
+- Updated the messaging.
+
+API: 5.17
+Based on novelibre 5.17.0
+
+
 ### Version 5.0.7
 
 - Disable the "Load" menu entry while the project is locked.
@@ -15,6 +24,7 @@ Library update:
 
 API: 5.0
 Based on novelibre 5.0.28
+
 
 ### Version 4.1.4
 

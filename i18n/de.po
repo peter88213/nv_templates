@@ -1,11 +1,11 @@
 # nv_templates Dictionary (English-German)
-# Copyright (C) 2022 Peter Triesberger
+# Copyright (C) 2025 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.7\n"
-"POT-Creation-Date: 2024-12-17 12:29:57\n"
-"PO-Revision-Date: 2024-12-17 12:29:57\n"
+"Project-Id-Version: 5.1.0\n"
+"POT-Creation-Date: 2025-03-19 22:26:11\n"
+"PO-Revision-Date: 2025-03-19 22:26:11\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,12 @@ msgstr "Datei nicht gefunden"
 
 msgid "Load"
 msgstr "Laden"
+
+msgid "Major Character"
+msgstr "Hauptfigur"
+
+msgid "Minor Character"
+msgstr "Nebenfigur"
 
 msgid "New Section"
 msgstr "Neuer Abschnitt"
