@@ -47,8 +47,8 @@ class TemplateManager(ServiceBase):
 
     def new_project(self):
         """Create a novelibre project instance."""
-        self._ctrl.create_project()
-        self.load_template()
+        if self._ctrl.create_project():
+            self.load_template()
 
     def open_folder(self):
         """Open the templates folder with the OS file manager."""

@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.1.1
+
+- Fix a bug where the **File > New > Create from template...** command cannot be properly aborted.
+
+API: 5.18
+Based on novelibre 5.18.0
+
+
 ### Version 5.1.0
 
 - Updated the messaging.
