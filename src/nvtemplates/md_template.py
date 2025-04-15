@@ -86,7 +86,7 @@ class MdTemplate:
             if mdLine.startswith('#'):
                 if newElement is not None:
                     newElement.notes = ''.join(notes).strip().replace('  ', ' ')
-                    notes = []
+                    notes.clear()
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
@@ -128,7 +128,7 @@ class MdTemplate:
             if mdLine.startswith('#'):
                 if newElement is not None:
                     newElement.notes = ''.join(notes).strip().replace('  ', ' ')
-                    notes = []
+                    notes.clear()
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
