@@ -33,8 +33,8 @@ class TemplateManager(ServiceBase):
         fileName = filedialog.askopenfilename(
             filetypes=[(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)],
             defaultextension=MdTemplate.EXTENSION,
-            initialdir=self.templateDir
-            )
+            initialdir=self.templateDir,
+        )
         if fileName:
             try:
                 templates = MdTemplate(fileName, self._mdl, self._ctrl)
@@ -42,8 +42,8 @@ class TemplateManager(ServiceBase):
             except Error as ex:
                 self._ui.show_error(
                     message=_('Template loading aborted'),
-                    detail=str(ex)
-                    )
+                    detail=str(ex),
+                )
 
     def new_project(self):
         """Create a novelibre project instance."""
@@ -67,12 +67,12 @@ class TemplateManager(ServiceBase):
                     pass
 
     def save_template(self):
-        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
+        """Save a structure of stages to a Markdown file."""
         fileName = filedialog.asksaveasfilename(
             filetypes=[(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)],
             defaultextension=MdTemplate.EXTENSION,
             initialdir=self.templateDir
-            )
+        )
         if not fileName:
             return
 

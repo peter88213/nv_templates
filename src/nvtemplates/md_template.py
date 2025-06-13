@@ -14,7 +14,8 @@ class MdTemplate:
     """Markdown story template representation.
     
     Public instance variables:
-        filePath: str -- path to the file (property with getter and setter). 
+        filePath: str -- path to the file 
+                  (property with getter and setter). 
     """
     DESCRIPTION = _('Story Template')
     EXTENSION = '.md'
@@ -23,9 +24,10 @@ class MdTemplate:
         """Initialize instance variables.
 
         Positional arguments:
-            filePath: str -- path to the file represented by the File instance.
-            model -- Reference to the model instance of the application.
-            controller -- Reference to the main controller instance of the application.
+            filePath: str -- path to the file represented 
+                             by the File instance.
+            model -- Reference to the model instance.
+            controller -- Reference to the main controller instance.
         """
         self.filePath = filePath
         self._mdl = model
@@ -40,9 +42,13 @@ class MdTemplate:
             with open(self.filePath, 'r', encoding='utf-8') as f:
                 mdLines = f.readlines()
         except(FileNotFoundError):
-            raise Error(f'{_("File not found")}: "{norm_path(self.filePath)}".')
+            raise Error(
+                f'{_("File not found")}: "{norm_path(self.filePath)}".'
+            )
         except:
-            raise Error(f'{_("Cannot read file")}: "{norm_path(self.filePath)}".')
+            raise Error(
+                f'{_("Cannot read file")}: "{norm_path(self.filePath)}".'
+            )
 
         if self._mdl.novel.chapters:
             self._create_stages(mdLines)
@@ -73,7 +79,9 @@ class MdTemplate:
             with open(self.filePath, 'w', encoding='utf-8') as f:
                 f.write(content)
         except:
-            raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
+            raise Error(
+                f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
+            )
 
     def _create_chapter_structure(self, mdLines):
         i = 0
@@ -92,19 +100,42 @@ class MdTemplate:
                     # Add a 2nd level stage.
                     if addChapter:
                         i += 1
-                        chId = self._ctrl.add_new_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        chId = self._ctrl.add_new_chapter(
+                            targetNode=chId,
+                            title=f"{_('Chapter')} {i}",
+                            chLevel=2,
+                            chType=0,
+                        )
                         scId = chId
                     newTitle = mdLine[3:].strip()
-                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ctrl.add_new_stage(
+                        targetNode=scId,
+                        title=newTitle,
+                        scType=3,
+                    )
                     newElement = self._mdl.novel.sections[scId]
-                    scId = self._ctrl.add_new_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
+                    scId = self._ctrl.add_new_section(
+                        targetNode=scId,
+                        title=_('New Section'),
+                        scType=0,
+                        status=1,
+                    )
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
                     i += 1
-                    chId = self._ctrl.add_new_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    chId = self._ctrl.add_new_chapter(
+                        targetNode=chId,
+                        title=f"{_('Chapter')} {i}",
+                        chLevel=2,
+                        chType=0,
+                    )
                     newTitle = mdLine[2:].strip()
-                    scId = self._ctrl.add_new_stage(targetNode=chId, title=newTitle, scType=2)
+                    scId = self._ctrl.add_new_stage(
+                        targetNode=chId,
+                        title=newTitle,
+                        scType=2,
+                    )
                     newElement = self._mdl.novel.sections[scId]
                     addChapter = False
                 else:
@@ -119,7 +150,12 @@ class MdTemplate:
             pass
 
     def _create_stages(self, mdLines):
-        chId = self._ctrl.add_new_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ctrl.add_new_chapter(
+            targetNode=CH_ROOT,
+            title=_('Stages'),
+            chLevel=2,
+            chType=3,
+        )
         scId = chId
         newElement = None
         notes = []
@@ -133,11 +169,19 @@ class MdTemplate:
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ctrl.add_new_stage(
+                        targetNode=scId,
+                        title=newTitle,
+                        scType=3,
+                    )
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._ctrl.add_new_stage(targetNode=scId, title=newTitle, scType=2)
+                    scId = self._ctrl.add_new_stage(
+                        targetNode=scId,
+                        title=newTitle,
+                        scType=2,
+                    )
                 else:
                     scId = None
                 if scId:

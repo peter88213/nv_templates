@@ -53,9 +53,9 @@ class Plugin(PluginBase):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            model -- reference to the main model instance of the application.
-            view -- reference to the main view instance of the application.
-            controller -- reference to the main controller instance of the application.
+            model -- reference to the novelibre main model instance.
+            view -- reference to the novelibre main view instance.
+            controller -- reference to the novelibre main controller instance.
 
         Extends the superclass method.
         """
@@ -64,18 +64,36 @@ class Plugin(PluginBase):
 
         # Create "Story Templates" submenu.
         self.templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self.templatesMenu.add_command(label=f"{_('Load')}...", command=self.load_template)
-        self.templatesMenu.add_command(label=f"{_('Save')}...", command=self.save_template)
-        self.templatesMenu.add_command(label=_('Open folder'), command=self.open_folder)
+        self.templatesMenu.add_command(
+            label=f"{_('Load')}...",
+            command=self.load_template,
+        )
+        self.templatesMenu.add_command(
+            label=f"{_('Save')}...",
+            command=self.save_template,
+        )
+        self.templatesMenu.add_command(
+            label=_('Open folder'),
+            command=self.open_folder,
+        )
 
         # Add an entry to the "File > New" menu.
-        self._ui.newMenu.add_command(label=_('Create from template...'), command=self.new_project)
+        self._ui.newMenu.add_command(
+            label=_('Create from template...'),
+            command=self.new_project,
+        )
 
         # Create Tools menu entry.
-        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self.templatesMenu)
+        self._ui.toolsMenu.add_cascade(
+            label=self.FEATURE,
+            menu=self.templatesMenu,
+        )
 
         # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=self.open_help)
+        self._ui.helpMenu.add_command(
+            label=_('Templates plugin Online help'),
+            command=self.open_help,
+        )
 
     def load_template(self):
         self.templateManager.load_template()
@@ -85,7 +103,10 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self.templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
+        self.templatesMenu.entryconfig(
+            f"{_('Load')}...",
+            state='disabled',
+        )
 
     def new_project(self):
         self.templateManager.new_project()
@@ -104,5 +125,8 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self.templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
+        self.templatesMenu.entryconfig(
+            f"{_('Load')}...",
+            state='normal',
+        )
 
