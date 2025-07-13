@@ -119,6 +119,10 @@ def main(zipped=True):
         output('Copying locale ...')
         copy_tree('locale', applicationDir)
 
+        # Install the icon files.
+        output('Copying icons ...')
+        copy_tree('icons', applicationDir)
+
         # Install the sample templates.
         templateDir = f'{applicationDir}/templates'
         os.makedirs(templateDir, exist_ok=True)

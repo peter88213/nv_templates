@@ -15,6 +15,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
+from pathlib import Path
 import webbrowser
 
 from nvtemplates.nvtemplates_locale import _
@@ -61,6 +62,7 @@ class Plugin(PluginBase):
         """
         super().install(model, view, controller)
         self.templateManager = TemplateManager(model, view, controller)
+        self._icon = self._get_icon('templates.png')
 
         # Create "Story Templates" submenu.
         self.templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
@@ -80,18 +82,24 @@ class Plugin(PluginBase):
         # Add an entry to the "File > New" menu.
         self._ui.newMenu.add_command(
             label=_('Create from template...'),
+            image=self._icon,
+            compound='left',
             command=self.new_project,
         )
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(
             label=self.FEATURE,
+            image=self._icon,
+            compound='left',
             menu=self.templatesMenu,
         )
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(
             label=_('Templates plugin Online help'),
+            image=self._icon,
+            compound='left',
             command=self.open_help,
         )
 
@@ -129,4 +137,18 @@ class Plugin(PluginBase):
             f"{_('Load')}...",
             state='normal',
         )
+
+    def _get_icon(self, fileName):
+        # Return the icon for the main view.
+        if self._ctrl.get_preferences().get('large_icons', False):
+            size = 24
+        else:
+            size = 16
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            iconPath = f'{homeDir}/.novx/icons/{size}'
+            icon = tk.PhotoImage(file=f'{iconPath}/{fileName}')
+        except:
+            icon = None
+        return icon
 

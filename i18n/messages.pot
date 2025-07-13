@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.1.2\n"
-"POT-Creation-Date: 2025-04-15 14:02:14\n"
+"Project-Id-Version: 5.2.0\n"
+"POT-Creation-Date: 2025-07-13 11:25:15\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -13,6 +13,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: novxlib pgettext.py 0.3\n"
 
+
+msgid "1st Edit"
+msgstr ""
+
+msgid "2nd Edit"
+msgstr ""
 
 msgid "Cannot read file"
 msgstr ""
@@ -27,6 +33,12 @@ msgid "Chapter"
 msgstr ""
 
 msgid "Create from template..."
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Draft"
 msgstr ""
 
 msgid "File not found"
@@ -45,6 +57,9 @@ msgid "New Section"
 msgstr ""
 
 msgid "Open folder"
+msgstr ""
+
+msgid "Outline"
 msgstr ""
 
 msgid "Save"

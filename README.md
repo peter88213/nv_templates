@@ -1,10 +1,10 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.1.2.pyzw)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.2.0.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_templates/)
 
 
-# nv_templates
+# ![T]( icons/templates.png)nv_templates
 
 The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.
 
@@ -43,10 +43,10 @@ better rename them.
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_templates_v5.1.2.pyzw](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.1.2.pyzw)
+Download the latest release [nv_templates_v5.2.0.pyzw](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.2.0.pyzw)
 
-- Launch *nv_templates_v5.1.2.pyzw* by double-clicking (Windows/Linux desktop),
-- or execute `python nv_templates_v5.1.2.pyzw` (Windows), resp. `python3 nv_templates_v5.1.2.pyzw` (Linux) on the command line.
+- Launch *nv_templates_v5.2.0.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python nv_templates_v5.2.0.pyzw` (Windows), resp. `python3 nv_templates_v5.2.0.pyzw` (Linux) on the command line.
 
 #### Important
 
@@ -62,9 +62,9 @@ the zip file.
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_templates_v5.1.2.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.1.2.zip)
+The package is also available in zip format: [nv_templates_v5.2.0.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.2.0.zip)
 
-- Extract the *nv_templates_v5.1.2* folder from the downloaded zipfile "nv_templates_v5.1.2.zip".
+- Extract the *nv_templates_v5.2.0* folder from the downloaded zipfile "nv_templates_v5.2.0.zip".
 - Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 
@@ -83,6 +83,7 @@ See the [online manual](https://peter88213.github.io/nvhelp-en/nv_templates/)
 - The notes in the *Save The Cat* sample template are based on the
   [Wikipedia page](https://en.wikipedia.org/wiki/Save_the_Cat!:_The_Last_Book_on_Screenwriting_You%27ll_Ever_Need) 
   on this topic.
+- The icons are based on the [Eva Icons](https://akveo.github.io/eva-icons/#/), published under the [MIT License](http://www.opensource.org/licenses/mit-license.php). The original black and white icons were colored for this plugin by the maintainer. 
 
 
 ## License

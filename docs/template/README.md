@@ -4,7 +4,7 @@
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_templates/)
 
 
-# nv_templates
+# ![T]( icons/templates.png)nv_templates
 
 The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.
 
@@ -83,6 +83,7 @@ See the [online manual](https://peter88213.github.io/nvhelp-en/nv_templates/)
 - The notes in the *Save The Cat* sample template are based on the
   [Wikipedia page](https://en.wikipedia.org/wiki/Save_the_Cat!:_The_Last_Book_on_Screenwriting_You%27ll_Ever_Need) 
   on this topic.
+- The icons are based on the [Eva Icons](https://akveo.github.io/eva-icons/#/), published under the [MIT License](http://www.opensource.org/licenses/mit-license.php). The original black and white icons were colored for this plugin by the maintainer. 
 
 
 ## License

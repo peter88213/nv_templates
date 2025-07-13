@@ -4,6 +4,14 @@
 
 ## Changelog
 
+### Version 5.2.0
+
+- Added icons.
+
+API: 5.18
+Based on novelibre 5.29.7
+
+
 ### Version 5.1.2
 
 - Refactored the code for better performance.
