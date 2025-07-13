@@ -4,7 +4,7 @@
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_templates/)
 
 
-# ![T] (icons/templates.png)nv_templates
+# ![T](icons/templates.png) nv_templates
 
 The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.
 
