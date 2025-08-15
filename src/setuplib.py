@@ -6,30 +6,16 @@ Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from shutil import copytree
-from shutil import copy2
-import zipfile
 import os
-import sys
 from pathlib import Path
-try:
-    from tkinter import *
-except ModuleNotFoundError:
-    input(
-        (
-            'The tkinter module is missing. '
-            'Please install the tk support package for your python3 version.'
-        )
-    )
-    sys.exit(1)
+from shutil import copy2
+from shutil import copytree
+import sys
+import zipfile
 
 PLUGIN = 'nv_templates.py'
 VERSION = ' @release'
 SAMPLE_PATH = 'sample/'
-
-root = Tk()
-processInfo = Label(root, text='')
-message = []
 
 pyz = os.path.dirname(__file__)
 
@@ -58,9 +44,9 @@ def extract_templates(templateDir):
                 if not targetFile:
                     continue
                 if os.path.isfile(f'{templateDir}/{targetFile}'):
-                    output(f'Overwriting "{templateDir}/{targetFile}" ...')
+                    print(f'Overwriting "{templateDir}/{targetFile}" ...')
                 else:
-                    output(f'Copying "{templateDir}/{targetFile}" ...')
+                    print(f'Copying "{templateDir}/{targetFile}" ...')
                 with open(f'{templateDir}/{targetFile}', 'wb') as f:
                     f.write(z.read(file))
 
@@ -70,17 +56,12 @@ def cp_templates(templateDir):
         with os.scandir(SAMPLE_PATH) as files:
             for file in files:
                 if os.path.isfile(f'{templateDir}/{file.name}'):
-                    output(f'Overwriting "{templateDir}/{file.name}" ...')
+                    print(f'Overwriting "{templateDir}/{file.name}" ...')
                 else:
-                    output(f'Copying "{file.name}" ...')
+                    print(f'Copying "{file.name}" ...')
                 copy2(f'{SAMPLE_PATH}/{file.name}', f'{templateDir}/{file.name}')
     except:
         pass
-
-
-def output(text):
-    message.append(text)
-    processInfo.config(text=('\n').join(message))
 
 
 def main(zipped=True):
@@ -97,30 +78,23 @@ def main(zipped=True):
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
-    # Open a tk window.
-    root.title('Setup')
-    output(f'*** Installing {PLUGIN}{VERSION} ***\n')
-    header = Label(root, text='')
-    header.pack(padx=5, pady=5)
-
-    # Prepare the messaging area.
-    processInfo.pack(padx=5, pady=5)
-
-    # Install the plugin.
+    print(f'*** Installing {PLUGIN} {VERSION} ***')
     homePath = str(Path.home()).replace('\\', '/')
     applicationDir = f'{homePath}/.novx'
     if os.path.isdir(applicationDir):
         pluginDir = f'{applicationDir}/plugin'
         os.makedirs(pluginDir, exist_ok=True)
-        output(f'Copying "{PLUGIN}" ...')
+
+        # Install the plugin.
+        print(f'Copying "{PLUGIN}" ...')
         copy_file(PLUGIN, pluginDir)
 
         # Install the localization files.
-        output('Copying locale ...')
+        print('Copying locale ...')
         copy_tree('locale', applicationDir)
 
         # Install the icon files.
-        output('Copying icons ...')
+        print('Copying icons ...')
         copy_tree('icons', applicationDir)
 
         # Install the sample templates.
@@ -129,20 +103,14 @@ def main(zipped=True):
         copy_templates(templateDir)
 
         # Show a success message.
-        output(
-            (
-                f'Sucessfully installed "{PLUGIN}" '
-                f'at "{os.path.normpath(pluginDir)}".'
-            )
+        print(
+            f'Sucessfully installed "{PLUGIN}" '
+            f'at "{os.path.normpath(pluginDir)}".'
         )
     else:
-        output(
-            (
-                'ERROR: Cannot find a novelibre installation '
-                f'at "{os.path.normpath(applicationDir)}".'
-            )
+        print(
+            'ERROR: Cannot find a novelibre installation '
+            f'at "{os.path.normpath(applicationDir)}".'
         )
-    root.quitButton = Button(text="Quit", command=quit)
-    root.quitButton.config(height=1, width=30)
-    root.quitButton.pack(padx=5, pady=5)
-    root.mainloop()
+
+    input('Press any key to quit.')
