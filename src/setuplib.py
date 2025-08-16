@@ -14,7 +14,7 @@ import sys
 import zipfile
 
 PLUGIN = 'nv_templates.py'
-VERSION = ' @release'
+VERSION = '@release'
 SAMPLE_PATH = 'sample/'
 
 pyz = os.path.dirname(__file__)
