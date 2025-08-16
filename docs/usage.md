@@ -8,7 +8,7 @@ A [novelibre](https://github.com/peter88213/novelibre/) plugin for managing Mark
 
 # Installation
 
-If [novelibre](https://github.com/peter88213/novelibre/) is installed, the setup script *setup.pyw* installs the *nv_templates* plugin in the *novelibre* plugin directory.
+If [novelibre](https://github.com/peter88213/novelibre/) is installed, the setup script *setup.py* installs the *nv_templates* plugin in the *novelibre* plugin directory.
 
 The plugin adds a **Story Templates** entry to the *novelibre* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
 

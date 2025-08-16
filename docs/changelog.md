@@ -9,7 +9,7 @@
 - Added icons.
 
 API: 5.18
-Based on novelibre 5.29.7
+Based on novelibre 5.29.7 (5.30.0)
 
 
 ### Version 5.1.2
