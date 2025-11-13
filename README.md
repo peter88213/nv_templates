@@ -30,16 +30,12 @@ In *novelibre*, you can define a narrative structure with *stages* on two differ
 
 ## Download and install
 
----
+> [!NOTE]
+> The plugin comes with sample templates which are automatically
+> copied into the *templates* folder of the *novelibre* installation. 
+> Existing files are overwritten. So if you customize your templates, 
+> better rename them.  
 
-**Note**
-
-The plugin comes with sample templates which are automatically
-copied into the *templates* folder of the *novelibre* installation. 
-Existing files are overwritten. So if you customize your templates, 
-better rename them.  
-
----
 
 ### Default: Executable Python zip archive
 
