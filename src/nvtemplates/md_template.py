@@ -5,7 +5,6 @@ For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from nvlib.novx_globals import CH_ROOT
-from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvtemplates.nvtemplates_locale import _
 
@@ -36,17 +35,17 @@ class MdTemplate:
     def read(self):
         """Parse the Markdown file and create parts, chapters, and sections.
         
-        Raise the "Error" exception in case of error. 
+        Raise the "RuntimeError" exception in case of error. 
         """
         try:
             with open(self.filePath, 'r', encoding='utf-8') as f:
                 mdLines = f.readlines()
         except(FileNotFoundError):
-            raise Error(
+            raise RuntimeError(
                 f'{_("File not found")}: "{norm_path(self.filePath)}".'
             )
         except:
-            raise Error(
+            raise RuntimeError(
                 f'{_("Cannot read file")}: "{norm_path(self.filePath)}".'
             )
 
@@ -58,7 +57,7 @@ class MdTemplate:
     def write(self):
         """Iterate the project structure and write the new elements to a Markdown file.
         
-        Raise the "Error" exception in case of error. 
+        Raise the "RuntimeError" exception in case of error. 
         """
         mdLines = []
         for chId in self._mdl.novel.tree.get_children(CH_ROOT):
@@ -79,7 +78,7 @@ class MdTemplate:
             with open(self.filePath, 'w', encoding='utf-8') as f:
                 f.write(content)
         except:
-            raise Error(
+            raise RuntimeError(
                 f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
             )
 

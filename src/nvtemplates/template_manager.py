@@ -9,7 +9,6 @@ from pathlib import Path
 from tkinter import filedialog
 
 from nvlib.controller.services.service_base import ServiceBase
-from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvtemplates.md_template import MdTemplate
 from nvtemplates.nvtemplates_locale import _
@@ -39,7 +38,7 @@ class TemplateManager(ServiceBase):
             try:
                 templates = MdTemplate(fileName, self._mdl, self._ctrl)
                 templates.read()
-            except Error as ex:
+            except RuntimeError as ex:
                 self._ui.show_error(
                     message=_('Template loading aborted'),
                     detail=str(ex),
@@ -79,11 +78,11 @@ class TemplateManager(ServiceBase):
         try:
             templates = MdTemplate(fileName, self._mdl, self._ctrl)
             templates.write()
-        except Error as ex:
+        except RuntimeError as ex:
             self._ui.show_error(
                 message=_('Cannot save template'),
                 detail=str(ex)
-                )
+            )
 
         self._ui.set_status(_('Template saved.'))
 

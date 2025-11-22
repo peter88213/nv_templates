@@ -26,7 +26,7 @@ In *novelibre*, you can define a narrative structure with *stages* on two differ
 
 ## Requirements
 
-- [novelibre](https://github.com/peter88213/novelibre/) version 5.18+
+- [novelibre](https://github.com/peter88213/novelibre/) version 5.43+
 
 ## Download and install
 
