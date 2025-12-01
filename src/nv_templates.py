@@ -15,19 +15,18 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-from pathlib import Path
 import webbrowser
 
 from nvtemplates.nvtemplates_locale import _
 from nvlib.controller.plugin.plugin_base import PluginBase
-from nvtemplates.template_manager import TemplateManager
-import tkinter as tk
+from nvtemplates.template_service import TemplateService
+from nvlib.gui.menus.nv_menu import NvMenu
 
 
 class Plugin(PluginBase):
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    API_VERSION = '5.43'
+    API_VERSION = '5.44'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
     HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_templates/'
@@ -35,20 +34,10 @@ class Plugin(PluginBase):
     FEATURE = _('Story Templates')
 
     def disable_menu(self):
-        """Disable menu entries when no project is open.
-        
-        Overrides the superclass method.
-        """
-        self.templatesMenu.entryconfig(f"{_('Load')}...", state='disabled')
-        self.templatesMenu.entryconfig(f"{_('Save')}...", state='disabled')
+        self.pluginMenu.disable_menu()
 
     def enable_menu(self):
-        """Enable menu entries when a project is open.
-        
-        Overrides the superclass method.
-        """
-        self.templatesMenu.entryconfig(f"{_('Load')}...", state='normal')
-        self.templatesMenu.entryconfig(f"{_('Save')}...", state='normal')
+        self.pluginMenu.enable_menu()
 
     def install(self, model, view, controller):
         """Add a submenu to the 'Tools' menu.
@@ -61,94 +50,80 @@ class Plugin(PluginBase):
         Extends the superclass method.
         """
         super().install(model, view, controller)
-        self.templateManager = TemplateManager(model, view, controller)
+        self.templateService = TemplateService(model, view, controller)
         self._icon = self._get_icon('templates.png')
 
+        #--- Configure the main menu.
+
         # Create "Story Templates" submenu.
-        self.templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self.templatesMenu.add_command(
-            label=f"{_('Load')}...",
+        self.pluginMenu = NvMenu()
+
+        label = f"{_('Load')}..."
+        self.pluginMenu.add_command(
+            label=label,
             command=self.load_template,
         )
-        self.templatesMenu.add_command(
-            label=f"{_('Save')}...",
+        self.pluginMenu.disableOnClose.append(label)
+        self.pluginMenu.disableOnLock.append(label)
+
+        label = f"{_('Save')}..."
+        self.pluginMenu.add_command(
+            label=label,
             command=self.save_template,
         )
-        self.templatesMenu.add_command(
-            label=_('Open folder'),
+        self.pluginMenu.disableOnClose.append(label)
+
+        label = _('Open folder')
+        self.pluginMenu.add_command(
+            label=label,
             command=self.open_folder,
         )
 
         # Add an entry to the "File > New" menu.
+        label = _('Create from template...')
         self._ui.newMenu.add_command(
-            label=_('Create from template...'),
+            label=label,
             image=self._icon,
             compound='left',
             command=self.new_project,
         )
 
         # Create Tools menu entry.
+        label = self.FEATURE
         self._ui.toolsMenu.add_cascade(
-            label=self.FEATURE,
+            label=label,
             image=self._icon,
             compound='left',
-            menu=self.templatesMenu,
+            menu=self.pluginMenu,
         )
 
         # Add an entry to the Help menu.
+        label = _('Templates plugin Online help')
         self._ui.helpMenu.add_command(
-            label=_('Templates plugin Online help'),
+            label=label,
             image=self._icon,
             compound='left',
             command=self.open_help,
         )
 
     def load_template(self):
-        self.templateManager.load_template()
+        self.templateService.load_template()
 
     def lock(self):
-        """Disable menu entries when the project is locked.
-        
-        Overrides the superclass method.
-        """
-        self.templatesMenu.entryconfig(
-            f"{_('Load')}...",
-            state='disabled',
-        )
+        self.pluginMenu.lock()
 
     def new_project(self):
-        self.templateManager.new_project()
+        self.templateService.new_project()
 
     def open_folder(self):
-        self.templateManager.open_folder()
+        self.templateService.open_folder()
 
     def open_help(self, event=None):
         webbrowser.open(self.HELP_URL)
 
     def save_template(self):
-        self.templateManager.save_template()
+        self.templateService.save_template()
 
     def unlock(self):
-        """Enable menu entries when the project is unlocked.
-        
-        Overrides the superclass method.
-        """
-        self.templatesMenu.entryconfig(
-            f"{_('Load')}...",
-            state='normal',
-        )
-
-    def _get_icon(self, fileName):
-        # Return the icon for the main view.
-        if self._ctrl.get_preferences().get('large_icons', False):
-            size = 24
-        else:
-            size = 16
-        try:
-            homeDir = str(Path.home()).replace('\\', '/')
-            iconPath = f'{homeDir}/.novx/icons/{size}'
-            icon = tk.PhotoImage(file=f'{iconPath}/{fileName}')
-        except:
-            icon = None
-        return icon
+        self.pluginMenu.unlock()
 

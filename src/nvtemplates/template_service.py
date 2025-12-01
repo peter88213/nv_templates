@@ -14,7 +14,7 @@ from nvtemplates.md_template import MdTemplate
 from nvtemplates.nvtemplates_locale import _
 
 
-class TemplateManager(ServiceBase):
+class TemplateService(ServiceBase):
 
     def __init__(self, model, view, controller):
         super().__init__(model, view, controller)

@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.2.0\n"
+"Project-Id-Version: 5.3.0\n"
 "POT-Creation-Date: 2025-08-16 15:21:14\n"
-"PO-Revision-Date: 2025-08-16 15:21:14\n"
+"PO-Revision-Date: 2025-12-01 18:39:35\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,9 @@ msgstr "1. Überarbeitung"
 msgid "2nd Edit"
 msgstr "2. Überarbeitung"
 
+msgid "Bio"
+msgstr "Biographie"
+
 msgid "Cannot read file"
 msgstr "Kann Datei nicht lesen"
 
@@ -31,6 +34,9 @@ msgstr "Kann Datei nicht schreiben"
 msgid "Chapter"
 msgstr "Kapitel"
 
+msgid "Characterization"
+msgstr "Charakterisierung"
+
 msgid "Create from template..."
 msgstr "Aus Vorlage erzeugen..."
 
@@ -40,8 +46,14 @@ msgstr "Fertiggestellt"
 msgid "Draft"
 msgstr "Entwurf"
 
+msgid "Ending"
+msgstr "Ende"
+
 msgid "File not found"
 msgstr "Datei nicht gefunden"
+
+msgid "Goals"
+msgstr "Ziele"
 
 msgid "Load"
 msgstr "Laden"
@@ -58,8 +70,17 @@ msgstr "Neuer Abschnitt"
 msgid "Open folder"
 msgstr "Ordner öffnen"
 
+msgid "Opening"
+msgstr "Eröffnung"
+
 msgid "Outline"
 msgstr "Gliederung"
+
+msgid "Peak emotional moment"
+msgstr "Emotionaler Höhepunkt"
+
+msgid "Plot progress"
+msgstr "Handlungsfortschritt"
 
 msgid "Save"
 msgstr "Speichern"
@@ -82,6 +103,8 @@ msgstr "Vorlage gespeichert"
 msgid "Templates plugin Online help"
 msgstr "Vorlagen-Plugin Online-Hilfe"
 
+msgid "World building"
+msgstr "Weltenbau"
+
 msgid "https://peter88213.github.io/nvhelp-en"
 msgstr "https://peter88213.github.io/nvhelp-de"
-
