@@ -39,7 +39,7 @@ In *novelibre*, you can define a narrative structure with *stages* on two differ
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_templates_v5.3.0.pyz](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.3.0.pyz)
+Download the latest release [nv_templates_v5.3.0.pyz](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.3.0.pyz) (27 KB)
 
 - Launch *nv_templates_v5.3.0.pyz* by double-clicking (Windows desktop),
 - or execute `python nv_templates_v5.3.0.pyz` (Windows), resp. `python3 nv_templates_v5.3.0.pyz` (Linux) on the command line.
@@ -57,7 +57,7 @@ Download the latest release [nv_templates_v5.3.0.pyz](https://github.com/peter88
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_templates_v5.3.0.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.3.0.zip)
+The package is also available in zip format: [nv_templates_v5.3.0.zip](https://github.com/peter88213/nv_templates/raw/main/dist/nv_templates_v5.3.0.zip) (27 KB)
 
 - Extract the *nv_templates_v5.3.0* folder from the downloaded zipfile "nv_templates_v5.3.0.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
