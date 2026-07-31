@@ -40,7 +40,7 @@ class Plugin(PluginBase):
         self.pluginMenu.enable_menu()
 
     def install(self, model, view, controller):
-        """Add a submenu to the 'Tools' menu.
+        """Install the plugin at runtime.
         
         Positional arguments:
             model -- reference to the novelibre main model instance.
@@ -55,7 +55,7 @@ class Plugin(PluginBase):
 
         #--- Configure the main menu.
 
-        # Create "Story Templates" submenu.
+        # Create the "Story Templates" submenu.
         self.pluginMenu = NvMenu()
 
         label = f"{_('Load')}..."
