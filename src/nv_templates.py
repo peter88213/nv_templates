@@ -53,25 +53,13 @@ class Plugin(PluginBase):
 
         #--- Configure the user interface.
 
-        def load_template():
-            self.templateService.load_template()
-
-        def new_project():
-            self.templateService.new_project()
-
-        def open_folder():
-            self.templateService.open_folder()
-
-        def save_template():
-            self.templateService.save_template()
-
         # Create the "Story Templates" submenu.
         self.pluginMenu = NvMenu()
 
         label = f"{_('Load')}..."
         self.pluginMenu.add_command(
             label=label,
-            command=load_template,
+            command=self.templateService.load_template,
         )
         self.pluginMenu.disableOnClose.append(label)
         self.pluginMenu.disableOnLock.append(label)
@@ -79,14 +67,14 @@ class Plugin(PluginBase):
         label = f"{_('Save')}..."
         self.pluginMenu.add_command(
             label=label,
-            command=save_template,
+            command=self.templateService.save_template,
         )
         self.pluginMenu.disableOnClose.append(label)
 
         label = _('Open folder')
         self.pluginMenu.add_command(
             label=label,
-            command=open_folder,
+            command=self.templateService.open_folder,
         )
 
         # Add an entry to the "File > New" menu.
@@ -95,7 +83,7 @@ class Plugin(PluginBase):
             label=label,
             image=self._icon,
             compound='left',
-            command=new_project,
+            command=self.templateService.new_project,
         )
 
         # Create Tools menu entry.
