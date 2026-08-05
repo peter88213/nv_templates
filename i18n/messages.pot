@@ -1,10 +1,10 @@
 # nv_templates Dictionary
-# Copyright (C) 2025 Peter Triesberger
+# Copyright (C) 2026 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.3.0\n"
-"POT-Creation-Date: 2025-12-01 18:50:55\n"
+"Project-Id-Version: 5.4.0\n"
+"POT-Creation-Date: 2026-08-05 12:59:17\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -101,11 +101,8 @@ msgstr ""
 msgid "Template saved."
 msgstr ""
 
-msgid "Templates plugin Online help"
+msgid "Templates plugin help"
 msgstr ""
 
 msgid "World building"
-msgstr ""
-
-msgid "https://peter88213.github.io/nvhelp-en"
 msgstr ""

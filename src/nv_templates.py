@@ -15,8 +15,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-import webbrowser
-
 from nvtemplates.nvtemplates_locale import _
 from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtemplates.template_service import TemplateService
@@ -26,10 +24,10 @@ from nvlib.gui.menus.nv_menu import NvMenu
 class Plugin(PluginBase):
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    API_VERSION = '5.44'
+    API_VERSION = '5.63'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://github.com/peter88213/nv_templates'
-    HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_templates/'
+    HELP_PAGE = 'nv_templates'
 
     FEATURE = _('Story Templates')
 
@@ -53,7 +51,19 @@ class Plugin(PluginBase):
         self.templateService = TemplateService(model, view, controller)
         self._icon = self._get_icon('templates.png')
 
-        #--- Configure the main menu.
+        #--- Configure the user interface.
+
+        def load_template():
+            self.templateService.load_template()
+
+        def new_project():
+            self.templateService.new_project()
+
+        def open_folder():
+            self.templateService.open_folder()
+
+        def save_template():
+            self.templateService.save_template()
 
         # Create the "Story Templates" submenu.
         self.pluginMenu = NvMenu()
@@ -61,7 +71,7 @@ class Plugin(PluginBase):
         label = f"{_('Load')}..."
         self.pluginMenu.add_command(
             label=label,
-            command=self.load_template,
+            command=load_template,
         )
         self.pluginMenu.disableOnClose.append(label)
         self.pluginMenu.disableOnLock.append(label)
@@ -69,14 +79,14 @@ class Plugin(PluginBase):
         label = f"{_('Save')}..."
         self.pluginMenu.add_command(
             label=label,
-            command=self.save_template,
+            command=save_template,
         )
         self.pluginMenu.disableOnClose.append(label)
 
         label = _('Open folder')
         self.pluginMenu.add_command(
             label=label,
-            command=self.open_folder,
+            command=open_folder,
         )
 
         # Add an entry to the "File > New" menu.
@@ -85,7 +95,7 @@ class Plugin(PluginBase):
             label=label,
             image=self._icon,
             compound='left',
-            command=self.new_project,
+            command=new_project,
         )
 
         # Create Tools menu entry.
@@ -97,32 +107,10 @@ class Plugin(PluginBase):
             menu=self.pluginMenu,
         )
 
-        # Add an entry to the Help menu.
-        label = _('Templates plugin Online help')
-        self._ui.helpMenu.add_command(
-            label=label,
-            image=self._icon,
-            compound='left',
-            command=self.open_help,
-        )
-
-    def load_template(self):
-        self.templateService.load_template()
+        self._add_help_menu_entry(_('Templates plugin help'))
 
     def lock(self):
         self.pluginMenu.lock()
-
-    def new_project(self):
-        self.templateService.new_project()
-
-    def open_folder(self):
-        self.templateService.open_folder()
-
-    def open_help(self, event=None):
-        webbrowser.open(self.HELP_URL)
-
-    def save_template(self):
-        self.templateService.save_template()
 
     def unlock(self):
         self.pluginMenu.unlock()

@@ -5,6 +5,15 @@
 ## Changelog
 
 
+### Version 5.4.0
+
+- Using the novelibre 5.63+ help service.
+- Refactored the code
+
+API: 5.63
+Based on novelibre 5.63.1
+
+
 ### Version 5.3.0
 
 - Using the menu methods provided with novelibre 5.44.
