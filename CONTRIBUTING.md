@@ -72,7 +72,7 @@ See the [novelibre CONTRIBUTING page](https://github.com/peter88213/novelibre/bl
 └── nv_templates/
     ├── i18n/
     ├── src/
-	 │   └── nvtemplateslib/
+	 │   └── nvtemplates/
     └── tools/ 
         └── build.py
 ```
